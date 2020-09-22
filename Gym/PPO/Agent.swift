@@ -41,7 +41,7 @@ open class PPOAgent {
     var actorOptimizer: Adam<ActorNetwork>
     var criticOptimizer: Adam<CriticNetwork>
 
-    init(
+    public init(
         observationSize: Int,
         hiddenSize: Int,
         actionCount: Int,
@@ -69,7 +69,7 @@ open class PPOAgent {
         self.criticOptimizer = Adam(for: actorCritic.criticNetwork, learningRate: learningRate)
     }
 
-    func step(env: PythonObject, state: PythonObject) -> (PythonObject, Bool, Float) {
+    public func step(env: PythonObject, state: PythonObject) -> (PythonObject, Bool, Float) {
         let tfState: Tensor<Float> = Tensor<Float>(numpy: np.array([state], dtype: np.float32))!
         let dist: Categorical<Int32> = oldActorCritic(tfState)
         let action: Int32 = dist.sample().scalarized()
@@ -86,7 +86,7 @@ open class PPOAgent {
         return (newState, Bool(isDone)!, Float(reward)!)
     }
 
-    func update() {
+    public func update() {
         // Discount rewards for advantage estimation
         var rewards: [Float] = []
         var discountedReward: Float = 0
