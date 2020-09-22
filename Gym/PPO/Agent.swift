@@ -21,7 +21,7 @@ import TensorFlow
 /// function) using a clipped objective function. The clipped objective function simplifies the
 /// update equation from its predecessor Trust Region Policy Optimization (TRPO). For more
 /// information, check Proximal Policy Optimization Algorithms (Schulman et al., 2017).
-class PPOAgent {
+open class PPOAgent {
     // Cache for trajectory segments for minibatch updates.
     var memory: PPOMemory
     /// The learning rate for both the actor and the critic.
