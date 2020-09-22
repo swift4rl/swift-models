@@ -41,7 +41,7 @@ open class PPOAgent {
     var actorOptimizer: Adam<ActorNetwork>
     var criticOptimizer: Adam<CriticNetwork>
 
-    open init(
+    public init(
         observationSize: Int,
         hiddenSize: Int,
         actionCount: Int,
