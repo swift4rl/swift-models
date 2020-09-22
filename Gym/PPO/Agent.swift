@@ -14,6 +14,7 @@
 
 import PythonKit
 import TensorFlow
+let np = Python.import("numpy")
 
 /// Agent that uses the Proximal Policy Optimization (PPO).
 ///
