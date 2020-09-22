@@ -20,6 +20,7 @@ let package = Package(
         .library(name: "MiniGo", targets: ["MiniGo"]),
         .library(name: "TrainingLoop", targets: ["TrainingLoop"]),
         .library(name: "BenchmarksCore", targets: ["BenchmarksCore"]),
+        .library(name: "Gym", targets: ["Gym-PPO", "Gym-DQN", "Gym-CartPole"])
     ],
     dependencies: [
         .package(url: "https://github.com/apple/swift-protobuf.git", from: "1.10.0"),
